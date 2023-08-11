@@ -9,24 +9,37 @@
     margin: auto;
     .logo {
       color: #fff;
-      font-size: 1.2rem;
-      margin-top: -0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      align-items: center;
     }
     .header-cart {
+      cursor: pointer;
       display: flex;
       border: 0;
-      outline: 0;
       border-radius: 2rem;
       justify-content: center;
-      background-color: #4d1601;
+      background-color: rgb(86, 6, 6);
       padding: 0.75rem 3rem;
       gap: 1rem;
       color: #fff;
       align-items: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      &:hover {
+        background-color: #aaa;
+        color: darkred;
+        transform: scale(1.05);
+      }
+      &:active {
+        background-color: #321103;
+        transform: scale(0.95);
+      }
       .cart-counter {
-        background-color: #8a2b06;
+        background-color: darkred;
+        color: silver;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
+        font-weight: bold;
       }
       .text-icon {
         display: flex;
@@ -39,8 +52,8 @@
           margin: 0;
         }
         svg {
-          width: 2rem;
-          height: 2rem;
+          width: 1.5rem;
+          height: 1.5rem;
         }
       }
     }

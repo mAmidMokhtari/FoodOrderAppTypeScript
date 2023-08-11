@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+  margin: -10rem auto 2rem auto;
+  z-index: 10;
+  position: relative;
+  background-color: #383838;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  width: 90%;
+  max-width: 42rem;
+  box-shadow: 10px 10px 10px 10px rgba($color: rgb(50, 50, 50), $alpha: 0.1);
+  h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}

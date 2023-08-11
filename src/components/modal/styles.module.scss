@@ -1,0 +1,132 @@
+.cart {
+  align-items: center;
+  height: auto;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  width: 40rem;
+  background-color: #fff;
+  position: relative;
+  border-radius: 1rem;
+
+  form {
+    width: 95%;
+    margin: auto;
+    .form {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      label {
+        font-weight: bold;
+        margin: 0.25rem;
+      }
+      input {
+        width: 50%;
+        font-size: 1.2rem;
+        margin: 0.25rem;
+        padding: 0.25rem;
+        border: 1px silver solid;
+        border-color: silver;
+        border-radius: 0.25rem;
+      }
+    }
+    .order {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        min-width: 6rem;
+        border: 1px darkred solid;
+        border-color: darkred;
+        border-radius: 2rem;
+        margin-bottom: 3rem;
+        cursor: pointer;
+        &.cancel-button:hover {
+          background-color: darkred;
+          color: #fff;
+          transition: all 0.3s ease-out;
+        }
+        &.confirm-button {
+          background-color: rgb(167, 1, 1);
+          color: #fff;
+
+          &:hover {
+            background-color: darkred;
+            transition: all 0.3s ease-out;
+          }
+        }
+      }
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+  ul {
+    font-size: 1rem;
+    margin: auto;
+    padding: 2rem 0 1rem 0;
+    width: 95%;
+    list-style: none;
+    border-bottom: 2px black solid;
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      .buttons {
+        display: flex;
+        .plus {
+          cursor: pointer;
+          background-color: #fff;
+          align-items: center;
+          font-size: 1.5rem;
+          width: 3rem;
+          margin: 1rem 0.3rem;
+          border: 1px darkred solid;
+          color: darkred;
+          border-radius: 0.4rem;
+          &:hover {
+            background-color: darkred;
+            color: #fff;
+          }
+        }
+      }
+      .order {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        h2 {
+          padding: 0;
+          margin: 0;
+        }
+        .detail {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .price {
+            color: darkred;
+            font-weight: bold;
+          }
+          .icon {
+            border: 1px gray solid;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            width: 3rem;
+            margin-left: 4rem;
+            padding: 0.5rem 0;
+            border-color: silver;
+            color: darkslategrey;
+            border-radius: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+}
