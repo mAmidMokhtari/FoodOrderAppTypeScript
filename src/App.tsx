@@ -1,12 +1,15 @@
+import Foods from "./components/Foods";
 import Header from "./components/Header";
+import { ModalProvider } from "./components/store/useModalContext";
 
 function App() {
   return (
-    <>
-      <header>
-        <Header />
-      </header>
-    </>
+    <ModalProvider>
+      <Header />
+      <main>
+        <Foods />
+      </main>
+    </ModalProvider>
   );
 }
 

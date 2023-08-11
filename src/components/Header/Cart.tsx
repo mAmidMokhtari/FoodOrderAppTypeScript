@@ -1,5 +1,6 @@
 import { FC } from "react";
 
+import { useModalContext } from "../store/useModalContext";
 import styles from "./styles.module.scss";
 
 interface ICart {
@@ -7,8 +8,9 @@ interface ICart {
 }
 
 const Cart: FC<ICart> = ({ cartCounter }) => {
+  const { openModal } = useModalContext();
   return (
-    <button className={styles["header-cart"]}>
+    <button onClick={openModal} className={styles["header-cart"]}>
       <div className={styles["text-icon"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
