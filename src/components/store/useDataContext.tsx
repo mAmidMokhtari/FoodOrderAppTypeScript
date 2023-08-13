@@ -114,6 +114,38 @@ export const DataProvider: FC<IDataProvider> = (props) => {
     defaultCartState
   );
 
+  // useEffect(() => {
+  //   const postCartItems = async (cartItems: IStoreItems) => {
+  //     try {
+  //       const { data } = await axios.post<{
+  //         items: IStoreItems;
+  //       }>(
+  //         "https://food-order-app-6ef33-default-rtdb.firebaseio.com/cartItems.json",
+  //         { cartItems: cartState },
+  //         {
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //             Accept: "application/json",
+  //           },
+  //         }
+  //       );
+
+  //       return data;
+  //     } catch (error: any) {
+  //       if (axios.isAxiosError(error)) {
+  //         console.log("error message: ", error.message);
+  //         // 👇️ error: AxiosError<any, any>
+  //         return error.message;
+  //       } else {
+  //         console.log("unexpected error: ", error);
+  //         return "An unexpected error occurred";
+  //       }
+  //     }
+  //   };
+
+  //   cartState.items.length > 0 && postCartItems(cartState);
+  // }, [cartState]);
+
   const addItemToCartHandler = (item: IFoodItem) => {
     dispatchCartAction({ type: "ADD", item: item });
   };

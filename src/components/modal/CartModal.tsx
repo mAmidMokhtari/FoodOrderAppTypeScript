@@ -48,7 +48,8 @@ const CartModal = () => {
 
   const postOrder = async (userData: IUserData, orderFoods: IFoodItem[]) => {
     try {
-      const { data, status } = await axios.post<{
+      // const { data, status } = await axios.post<{
+      const { data } = await axios.post<{
         user: IUserData;
         items: IFoodItem[];
       }>(
