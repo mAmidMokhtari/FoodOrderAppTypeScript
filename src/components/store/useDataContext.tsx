@@ -7,7 +7,7 @@ import React, {
   useReducer,
 } from "react";
 
-interface IFoodItem {
+export interface IFoodItem {
   id: string;
   name: string;
   amount: number;
