@@ -8,7 +8,7 @@ const Header = () => {
         <div className={styles.logo}>
           <h1>Food Order App</h1>
         </div>
-        <Cart cartCounter={3} />
+        <Cart />
       </div>
     </header>
   );

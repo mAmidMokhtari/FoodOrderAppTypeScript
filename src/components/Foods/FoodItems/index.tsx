@@ -7,6 +7,7 @@ interface IFoodMenu {
   description: string;
   price: number;
 }
+
 const FOOD_MENU: IFoodMenu[] = [
   {
     id: "m1",
@@ -44,6 +45,7 @@ const FoodItems = () => {
           name={item.name}
           description={item.description}
           price={item.price}
+          amount={1}
         />
       ))}
     </ul>

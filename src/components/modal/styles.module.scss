@@ -9,25 +9,35 @@
   position: relative;
   border-radius: 1rem;
 
-  form {
+  .form {
     width: 95%;
     margin: auto;
-    .form {
+    form {
       display: flex;
       flex-direction: column;
       text-align: left;
-      label {
-        font-weight: bold;
-        margin: 0.25rem;
-      }
-      input {
-        width: 50%;
-        font-size: 1.2rem;
-        margin: 0.25rem;
-        padding: 0.25rem;
-        border: 1px silver solid;
-        border-color: silver;
-        border-radius: 0.25rem;
+      .control {
+        margin-bottom: 0.5rem;
+        &.invalid {
+          label {
+            color: #ca3e51;
+          }
+          input {
+            border-color: #aa0b20;
+            background-color: #ffeff1;
+          }
+        }
+        label {
+          font-weight: bold;
+          margin-bottom: 0.25rem;
+          display: block;
+        }
+        input {
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          width: 20rem;
+          max-width: 100%;
+        }
       }
     }
     .order {
