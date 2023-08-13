@@ -1,16 +1,38 @@
-import { FC } from "react";
+import { useEffect, useState } from "react";
 
+import { useDataContext } from "../store/useDataContext";
 import { useModalContext } from "../store/useModalContext";
 import styles from "./styles.module.scss";
 
-interface ICart {
-  cartCounter: number;
-}
+const Cart = () => {
+  const cartCtx = useDataContext();
 
-const Cart: FC<ICart> = ({ cartCounter }) => {
+  const foodItemsAmount = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
   const { openModal } = useModalContext();
+
+  const [bump, setBump] = useState(false);
+
+  useEffect(() => {
+    if (cartCtx.items.length === 0) {
+      return;
+    }
+    setBump(true);
+
+    const timer = setTimeout(() => setBump(false), 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [cartCtx.items]);
+
   return (
-    <button onClick={openModal} className={styles["header-cart"]}>
+    <button
+      onClick={openModal}
+      className={[styles["header-cart"], styles[`${bump ? "bump" : ""}`]].join(
+        " "
+      )}
+    >
       <div className={styles["text-icon"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +43,7 @@ const Cart: FC<ICart> = ({ cartCounter }) => {
         </svg>
         <h3>Your Cart</h3>
       </div>
-      <div className={styles["cart-counter"]}>{cartCounter}</div>
+      <div className={styles["cart-counter"]}>{foodItemsAmount}</div>
     </button>
   );
 };

@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
+import { useDataContext } from "../../../store/useDataContext";
 import styles from "./styles.module.scss";
 
 interface IFoodItem {
@@ -7,9 +8,12 @@ interface IFoodItem {
   name: string;
   description: string;
   price: number;
+  amount: number;
 }
 
 const FoodItem: FC<IFoodItem> = (props) => {
+  const cartCtx = useDataContext();
+  const [items, setItems] = useState(props);
   return (
     <li className={styles["food-list-wrapper"]}>
       <div className={styles["food-detail"]}>
@@ -20,9 +24,21 @@ const FoodItem: FC<IFoodItem> = (props) => {
       <div className={styles["control-wrapper"]}>
         <div className={styles["amount-control"]}>
           <label htmlFor="amount">Amount</label>
-          <input defaultValue={0} type="number" min="1" max="5" step="1" />
+          <input
+            onChange={(e) =>
+              setItems((prevState) => ({
+                ...prevState,
+                amount: parseInt(e.target.value),
+              }))
+            }
+            defaultValue={1}
+            type="number"
+            min="1"
+            max="5"
+            step="1"
+          />
         </div>
-        <button>+ Add</button>
+        <button onClick={cartCtx.addItem.bind(null, items)}>+ Add</button>
       </div>
     </li>
   );

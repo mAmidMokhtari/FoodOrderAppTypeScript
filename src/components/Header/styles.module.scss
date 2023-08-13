@@ -1,5 +1,9 @@
 .container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 30;
   background-color: #8a2b06;
   .wrapper {
     display: flex;
@@ -14,6 +18,10 @@
       align-items: center;
     }
     .header-cart {
+      &.bump {
+        transform: scale(1.05);
+        transition: all 0.3 ease-out;
+      }
       cursor: pointer;
       display: flex;
       border: 0;
@@ -26,17 +34,13 @@
       align-items: center;
       transition: background-color 0.3s ease, transform 0.3s ease;
       &:hover {
-        background-color: #aaa;
-        color: darkred;
-        transform: scale(1.05);
-      }
-      &:active {
         background-color: #321103;
         transform: scale(0.95);
       }
+
       .cart-counter {
         background-color: darkred;
-        color: silver;
+        color: white;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
         font-weight: bold;
